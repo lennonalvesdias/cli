@@ -1,5 +1,3 @@
-module.exports = () => {
-    return `
 export default {
     /**
      * Template da classe App
@@ -8,8 +6,6 @@ export default {
      * @return {String} retorna o HTML dos componentes 
     */
     app(){
-        return ##template_here##;
+        return '##template_here##';
     }
-}
-    `;
 }

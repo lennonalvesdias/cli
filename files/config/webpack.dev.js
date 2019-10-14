@@ -1,5 +1,3 @@
-module.exports = () => {
-	return `
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const moduleRules = require('./webpack.rules');
@@ -9,7 +7,7 @@ const dot = new Dotenv({
 });
 
 module.exports = (env, args) => {
-	let ASSETS_URL = dot.definitions['process.env.ASSETS_URL'].replace(/[\\\\"]/g, '');
+	let ASSETS_URL = dot.definitions['process.env.ASSETS_URL'].replace(/[\\"]/g, '');
 	let prepared = moduleRules(env, args);
 	let config = {
 		cache : true,
@@ -25,6 +23,4 @@ module.exports = (env, args) => {
 	}
 
 	return config;
-}
-	`;
 }

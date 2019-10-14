@@ -1,12 +1,10 @@
-module.exports = () => {
-    return `
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = () => {
     return {
         rules: [
             {
-                test: /\\.js$/,
+                test: /\.js$/,
                 exclude: /(node_modules)/,
                 loader: 'babel-loader',
                 options: {
@@ -26,7 +24,7 @@ module.exports = () => {
                 }
             },
             {
-                test: /\\.(woff(2)?|ttf|eot|svg)(\\?v=\\d+\\.\\d+\\.\\d+)?$/,
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
                 use: [{
                     loader: 'file-loader',
                     options: {
@@ -37,7 +35,7 @@ module.exports = () => {
                 }]
             },
             {
-                test: /\\.(s*)css$/,
+                test: /\.(s*)css$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
@@ -52,7 +50,7 @@ module.exports = () => {
                 ]
             },
             {
-                test: /\\.(png|jpg|ico)$/,
+                test: /\.(png|jpg|ico)$/,
                 use: [{
                     loader: 'file-loader',
                     options: {
@@ -65,6 +63,4 @@ module.exports = () => {
             }				
         ]
     }
-}    
-    `;
 }

@@ -1,5 +1,3 @@
-module.exports = () => {
-    return `
 const setEntry = require('./setEntry');
 const setPlugins = require('./setPlugins');
 const setRules = require('./setRules');
@@ -16,6 +14,4 @@ module.exports = (env, args) => {
         rules : getRules,
         optimization : getOptimization
     }  
-}
-    `;
 }

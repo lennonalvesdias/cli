@@ -1,5 +1,3 @@
-module.exports = () => {
-	return `
 const merge = require('webpack-merge');
 const dev = require('./webpack.dev');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
@@ -16,12 +14,12 @@ module.exports = (env, args) => {
 	let config = {
 		plugins: [
 			new UglifyJsPlugin({
-				test: /\\.js($|\\?)/i
+				test: /\.js($|\?)/i
 			}),
 			new webpack.optimize.ModuleConcatenationPlugin(),
 			new BrotliPlugin({
 				asset : '[path].br[query]',
-				test : /\\.(js|css|html|svg)$/,
+				test : /\.(js|css|html|svg)$/,
 				threshold : 10240,
 				minRatio : 0.8
 			})
@@ -31,6 +29,4 @@ module.exports = (env, args) => {
 	const develop = dev(env, args);
 	const mergeConfig = merge(develop, config);
 	return mergeConfig;
-}	
-	`;
 }

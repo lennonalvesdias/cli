@@ -26,6 +26,9 @@ module.exports = () => {
     case 'help':
         require('./cmds/help')(args)
         break
+    case 'copy':
+        require('./cmds/copy')(args)
+        break
     default:
         error(`"${cmd}" is not a valid command!`, true)
         break

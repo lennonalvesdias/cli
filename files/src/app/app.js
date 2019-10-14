@@ -1,5 +1,3 @@
-module.exports = () => {
-    return `
 import 'core-js';
 import template from './template.js';
 import '../styles/main.scss';
@@ -21,6 +19,4 @@ export default class App{
     render(){
         document.getElementById('app').innerHTML = template.app();
     }
-}
-    `;
 }

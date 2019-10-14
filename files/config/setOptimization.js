@@ -1,5 +1,3 @@
-module.exports = () => {
-    return `
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
@@ -13,18 +11,16 @@ module.exports = ( entry ) => {
             cacheGroups : {
                 styles : {
                     name : entry,
-                    test: /\\.(s*)css$/,
+                    test: /\.(s*)css$/,
                     chunks : 'all',
                     enforce : true
                 },
                 commons : {
-                    test : /[\\\\/]node_modules[\\\\/]/,
+                    test : /[\\/]node_modules[\\/]/,
                     name : 'vendors',
                     chunks : 'all'
                 }
             }
         }   
     };
-}
-    `;
 }

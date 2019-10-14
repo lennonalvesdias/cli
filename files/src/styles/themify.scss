@@ -1,5 +1,3 @@
-module.exports = () => {
-    return `
 @import 'themes.scss';
 
 @mixin themify($themes: $themes) {
@@ -20,6 +18,4 @@ module.exports = () => {
 
 @function themed($key) {
     @return map-get($theme-map, $key);
-}    
-    `;
 }
